@@ -30,3 +30,30 @@ PROCEDURE DIVISION.
     DISPLAY "Hello Cobol!".
 STOP RUN.
 ```
+
+### II. Loops
+```
+PERFORM UNTIL NOT ANumber
+        EVALUATE true
+            WHEN IsPrime DISPLAY " --- PRIME NUMBER ---" 
+            WHEN IsOdd DISPLAY " --- ODD NUMBER ---" 
+            WHEN IsEven DISPLAY " --- EVEN NUMBER ---" 
+            WHEN LessThan5 DISPLAY " --- Less Then Five  ---" 
+            WHEN OTHER DISPLAY "Default Action"
+        END-EVALUATE
+        ACCEPT TestNumber
+END-PERFORM
+```
+
+### II. If - Else
+```
+IF Age > 18 Then
+    DISPLAY "You can vote"
+ELSE
+    DISPLAY "You cannot vote"
+END-IF
+
+IF Age LESS THAN 5 Then
+    DISPLAY "Stay home"
+END-IF.
+```

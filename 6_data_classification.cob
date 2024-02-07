@@ -47,4 +47,49 @@
            DISPLAY "Go to college"
        END-IF
 
+       IF Score IS PassingScore THEN
+           DISPLAY "You passed"
+       ELSE    
+           DISPLAY "You failed"
+       END-IF.
+
+      *Builtin classifications: numeric ALPAHBETIC ALPHABETIC-UPPER
+       IF Score IS NOT NUMERIC THEN    
+           DISPLAY "Score: Not a number"
+       END-IF.
+
+      * Checks if user inputed age is a number 
+       IF Age IS NOT NUMERIC THEN
+           DISPLAY "Age: Not a number"
+
+       ELSE 
+           display "Age: Is a Number 💖"
+       END-IF
+
+      * Toggle Values
+       IF Age > 18 THEN
+           SET CanVote to true
+       ELSE 
+           set CantVote to true
+
+       end-if 
+       DISPLAY "Vote " CanVoteFlag.
+
+       DISPLAY "Enter Single Number or X to Exit: ".
+       ACCEPT TestNumber.
+       
+       PERFORM UNTIL NOT ANumber
+
+           EVALUATE true
+               WHEN IsPrime DISPLAY " --- PRIME NUMBER ---" 
+               WHEN IsOdd DISPLAY " --- ODD NUMBER ---" 
+               WHEN IsEven DISPLAY " --- EVEN NUMBER ---" 
+               WHEN LessThan5 DISPLAY " --- Less Then Five  ---" 
+               WHEN OTHER DISPLAY "Default Action"
+
+           END-EVALUATE
+           ACCEPT TestNumber
+           
+       END-PERFORM
+
        stop run.
