@@ -4,7 +4,7 @@
        data division.
        file section.
        working-storage section.
-       01 SampStr PIC X(18) VALUE 'errire beef sneezed'.
+       01 SampStr PIC X(33) VALUE 'errire beef sneezed'.
        01 NumChars PIC 99 VALUE 0.
        01 NumEs PIC 99 VALUE 0.
        01 FName PIC X(6) VALUE 'Martin'.
@@ -48,6 +48,26 @@
        INTO FLMName
        ON OVERFLOW DISPLAY "Overflowed".
        DISPLAY FLMName. 
+
+      * 
+       DISPLAY "----------------"
+       STRING SStr1 DELIMITED BY Size                                   // This gest the whole string
+       SPACE
+       SStr2 DELIMITED BY "#"
+       INTO Dest
+       WITH POINTER Ptr
+       ON OVERFLOW DISPLAY 'overflow 2'
+       DISPLAY Dest.
+
+      * Unstring Will split a string 
+       UNSTRING SStr1 DELIMITED BY SPACE
+       INTO SStr3, SStr4
+       END-UNSTRING.
+
+       DISPLAY  SStr4 SStr3.
+
+
+
 
 
        stop run. 

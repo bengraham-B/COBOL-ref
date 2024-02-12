@@ -28,13 +28,10 @@
                03 WSLastName PIC X(15).
 
        PROCEDURE DIVISION.
-       OPEN EXTEND CustomerFile.
-           DISPLAY "Customer ID" WITH NO ADVANCING
-           ACCEPT IDNum
-           DISPLAY "Customer First Name" WITH NO ADVANCING
-           ACCEPT FirstName
-           DISPLAY "Customer Last Name" WITH NO ADVANCING
-           ACCEPT LastName
+       OPEN OUTPUT CustomerFile.
+           MOVE 00001 TO IDNum.
+           MOVE "Ben" TO FirstName.
+           MOVE "James" TO LastName.
            WRITE CustomerData
            END-WRITE.
        CLOSE CustomerFile.
